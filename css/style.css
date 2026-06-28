@@ -213,3 +213,25 @@ audio {
     .surah-grid { grid-template-columns: 1fr; }
     .notification-banner { flex-direction: column; margin: 10px; }
 }
+footer {
+    text-align: center;
+    padding: 30px 10px 110px 10px; /* المسافة السفلى كبيرة حتى لا يختفي النص خلف مشغل الصوت المدمج */
+}
+
+footer p {
+    font-size: 15px;
+    color: #999999; /* لون باهت وقريب من لون الخلفية */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dev-link {
+    color: #888888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.dev-link:hover {
+    color: var(--primary-color); /* يضيء باللون الأساسي فقط عند تمرير الماوس عليه */
+    text-decoration: underline;
+}
