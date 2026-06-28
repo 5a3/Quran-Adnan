@@ -1,0 +1,215 @@
+/* إعدادات الخطوط والألوان العامة */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #1e4620; /* أخضر إسلامي دافئ */
+    --secondary-color: #d4af37; /* ذهبي */
+    --bg-color: #f7f9f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding-bottom: 140px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), #0f2b11);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.header-dua {
+    margin-top: 10px; 
+    font-size: 0.95rem; 
+    color: #e0e0e0;
+}
+
+.notification-banner {
+    background-color: #edf5ee;
+    border: 1px solid var(--primary-color);
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px auto 0 auto;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.notification-banner button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.notification-banner button:hover {
+    background-color: #132e15;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.surah-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.loading-text {
+    text-align: center; 
+    grid-column: 1 / -1;
+}
+
+/* كارت السورة */
+.surah-card {
+    background-color: var(--card-bg);
+    border: 1px solid #e1e8e1;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.surah-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(30, 70, 32, 0.1);
+}
+
+.surah-card.active {
+    background-color: #edf5ee;
+    border-color: var(--primary-color);
+}
+
+.surah-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.surah-number {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.surah-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.surah-meta {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* أزرار التحكم والتحميل داخل الكارت */
+.card-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.play-icon {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    transition: 0.2s;
+}
+
+.download-btn {
+    color: #666;
+    font-size: 1.2rem;
+    transition: 0.2s;
+    padding: 5px;
+}
+
+.download-btn:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* مشغل الصوت السفلي */
+.audio-player-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-top: 3px solid var(--secondary-color);
+    z-index: 1000;
+}
+
+.current-surah-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+audio {
+    width: 100%;
+    max-width: 800px;
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    header h1 { font-size: 1.6rem; }
+    header p { font-size: 1rem; }
+    .surah-grid { grid-template-columns: 1fr; }
+    .notification-banner { flex-direction: column; margin: 10px; }
+}
