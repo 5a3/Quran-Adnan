@@ -112,7 +112,7 @@ function displaySurahs(surahs) {
             <div class="surah-info">
                 <div class="surah-number">${surah.number}</div>
                 <div>
-                    <div class="surah-name">سورة ${surah.name}</div>
+                    <div class="surah-name"> ${surah.name}</div>
                     <div class="surah-meta">${surah.revelationType === 'Meccan' ? 'مكية' : 'مدنية'} | آياتها ${surah.ayahs.length}</div>
                 </div>
             </div>
