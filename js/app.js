@@ -130,7 +130,7 @@ function displaySurahs(surahs) {
             document.querySelectorAll('.surah-card').forEach(c => c.classList.remove('active'));
             card.classList.add('active');
 
-            currentSurahTitle.innerText = `جاري التشغيل: سورة ${surah.name}`;
+            currentSurahTitle.innerText = `جاري التشغيل: ${surah.name}`;
             mainAudio.src = audioUrl;
             audioPlayerContainer.style.display = 'flex';
             mainAudio.play();
